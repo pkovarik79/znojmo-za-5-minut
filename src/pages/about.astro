@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="O projektu | Znojmo za 5 minut">
+  <section class="mx-auto max-w-3xl px-4 py-12">
+    <h1 class="text-4xl font-bold text-ink">O projektu</h1>
+    <div class="mt-6 space-y-5 leading-8 text-stone-700">
+      <p>
+        Znojmo za 5 minut je MVP statického webu, který zpracovává tiskové zprávy města Znojma do krátkých návrhů článků.
+      </p>
+      <p>
+        Automatizace vytváří pouze návrhy s příznakem draft. Veřejně se zobrazí až články, u kterých je v Markdownu nastaveno <strong>draft: false</strong>.
+      </p>
+      <p>
+        Veřejná část zobrazuje jen název zdroje a datum. URL původní zprávy zůstává interně uložená kvůli deduplikaci.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

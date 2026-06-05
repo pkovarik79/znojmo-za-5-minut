@@ -1,0 +1,39 @@
+name: Scrape Znojmo press releases
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Scrape Znojmo press releases
+        run: npm run scrape:znojmo
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1-mini' }}
+          ZNOJMO_PRESS_SOURCE_URL: ${{ vars.ZNOJMO_PRESS_SOURCE_URL }}
+
+      - name: Commit generated drafts
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Add Znojmo press release drafts"
+          file_pattern: "src/content/articles/*.md data/seen.json"

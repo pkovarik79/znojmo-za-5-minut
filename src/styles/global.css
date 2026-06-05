@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background: #faf8f3;
+  color: #1f2933;
+}
+
+body {
+  min-height: 100vh;
+}
+
+::selection {
+  background: #f2c078;
+  color: #1f2933;
+}
