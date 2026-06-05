@@ -7,8 +7,8 @@ const {
 } = Astro.props;
 
 const nav = [
-  { href: "/", label: "Domů" },
-  { href: "/articles", label: "Články" },
+  { href: "/", label: "Přehled" },
+  { href: "/articles", label: "Archiv" },
   { href: "/about", label: "O projektu" }
 ];
 ---
@@ -21,13 +21,17 @@ const nav = [
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body class="font-sans antialiased">
-    <header class="border-b border-stone-200 bg-paper/95">
-      <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-4">
-        <a href="/" class="text-lg font-bold tracking-normal text-moss">Znojmo za 5 minut</a>
-        <nav class="flex items-center gap-3 text-sm font-medium text-stone-700">
+  <body class="bg-[#f7f6f1] font-sans antialiased">
+    <header class="border-b border-stone-300 bg-[#fbfaf6]">
+      <div class="mx-auto flex max-w-6xl items-center justify-between border-b border-stone-200 px-4 py-2 text-xs text-stone-600">
+        <span>Stručný přehled zpráv města Znojma</span>
+        <span>Aktualizováno průběžně</span>
+      </div>
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-5">
+        <a href="/" class="text-2xl font-extrabold tracking-normal text-[#173f2d]">Znojmo za 5 minut</a>
+        <nav class="flex items-center gap-1 text-sm font-semibold text-stone-700">
           {nav.map((item) => (
-            <a class="rounded px-2 py-1 hover:bg-stone-100 hover:text-ink" href={item.href}>{item.label}</a>
+            <a class="px-3 py-2 hover:bg-stone-100 hover:text-ink" href={item.href}>{item.label}</a>
           ))}
         </nav>
       </div>
@@ -35,9 +39,10 @@ const nav = [
     <main>
       <slot />
     </main>
-    <footer class="border-t border-stone-200">
-      <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-stone-600">
-        Neoficiální komunitní přehled. Zdrojové URL se používají pouze interně pro deduplikaci.
+    <footer class="border-t border-stone-300 bg-[#fbfaf6]">
+      <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-8 text-sm text-stone-600 md:flex-row md:items-center md:justify-between">
+        <span>Neoficiální komunitní přehled tiskových zpráv města Znojma.</span>
+        <span>Zdrojové odkazy se veřejně nezobrazují.</span>
       </div>
     </footer>
   </body>
