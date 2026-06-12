@@ -30,7 +30,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1-mini' }}
-          ZNOJMO_PRESS_SOURCE_URL: ${{ vars.ZNOJMO_PRESS_SOURCE_URL }}
+          ZNOJMO_PRESS_SOURCE_URL: ${{ vars.ZNOJMO_PRESS_SOURCE_URL || 'https://www.znojmocity.cz/' }}
 
       - name: Commit generated drafts
         uses: stefanzweifel/git-auto-commit-action@v5
