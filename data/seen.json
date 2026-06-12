@@ -1,1 +1,66 @@
-[]
+[
+  {
+    "sourceUrl": "https://www.znojmocity.cz/mesto%2Da%2Durad/ms-95902/p1=95902",
+    "contentHash": "f2dc9ad33fbe2f1b491fd88d14d0c697e9418d3f37e48568d34b3f01a11f531b",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-06-12",
+    "createdFile": "src/content/articles/znojemsky-mestsky-urad-komplexni-informace-sluzby-online.md",
+    "createdAt": "2026-06-12T18:05:16.533Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/#panel0",
+    "contentHash": "a1c2e5c9859644869ecd8f3d4ca6b44ee4819fc52243725f2e6d9bde51187cff",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-06-12",
+    "createdFile": "src/content/articles/znojmo-informuje-dulezite-novinky-a-oznameni-z-mesta.md",
+    "createdAt": "2026-06-12T18:05:25.250Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/radnicni%2Dvez%2Dve%2Dznojme%2Dje%2Dnejlepe%2Dopravenou%2Dpamatkou%2Djizni%2Dmoravy/d-108965",
+    "contentHash": "4129db5940858d57119a61889fa5f316e0295e2a4668048c06065a3ddbb7b4fd",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-06-12",
+    "createdFile": "src/content/articles/radnicni-vez-v-znojme-ziskala-oceneni-za-citlivou-rekonstrukci.md",
+    "createdAt": "2026-06-12T18:05:31.905Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/novinky/ds-1222/kontext=1&archiv=1&zanorit=1",
+    "contentHash": "0a6fe1f5f4e33160a996f6ede67aa4fd0c6efa42aede046cc882add0148a3bc0",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-06-10",
+    "createdFile": "src/content/articles/mesto-znojmo-podpori-vydani-knihy-pripominajici-historii-zidovske-rodiny-lowyovy.md",
+    "createdAt": "2026-06-12T18:05:39.720Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/zamer%2Dpronajmu%2Dnemovitych%2Dveci%2Dpozemek%2Dparc%2Dc%2D42%2D7%2Dv%2Dk%2Du%2Dznojmo%2Dmesto/d-108930",
+    "contentHash": "81ebc5c813e1c6efdf9216c2a569ebb3b5eac258566b2e561bcdceb680704c7b",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-06-12",
+    "createdFile": "src/content/articles/zamer-pronajmu-pozemku-parc-42-7-znojmo-mesto.md",
+    "createdAt": "2026-06-12T18:05:47.016Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmo-zdravemesto.cz/",
+    "contentHash": "7dfbe91d3a5806f768d67905928b2ea991af114170d72d19e1c2e924290bef5e",
+    "originalTitle": "Znojmo zdravé město - Oficiální web",
+    "sourceDate": "2021-09-09",
+    "createdFile": "src/content/articles/znojmo-cyklo-vyjizdka-nova-cyklostezka-znojmo-chvalovice.md",
+    "createdAt": "2026-06-12T18:05:55.548Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/tenisove%2Dkurty%2Dleska%2Djako%2Dmoderni%2Dsportovni%2Dareal%2Dmesto%2Dzve%2Dverejnost%2Dk%2Dprojednani%2Dstudie/d-108835",
+    "contentHash": "70b9ad04587365149b0719ac485431fd89ecc10e974023a27ea278ec5e050d0e",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-06-11",
+    "createdFile": "src/content/articles/mesto-znojmo-predstavi-verejnosti-studii-rozvoje-arealu-u-lesky.md",
+    "createdAt": "2026-06-12T18:06:03.980Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/mesto%2Dpodpori%2Dzastitou%2Dvydani%2Dknihy%2Dpripominajici%2Dhistorii%2Dznojemske%2Dzidovske%2Drodiny%2Dlowyovych/d-108801",
+    "contentHash": "54b84369a5a90a9029333a70f50567b6f671eaf84b17252f5a9ebf05c8ee9f03",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-06-10",
+    "createdFile": "src/content/articles/kniha-o-zidovske-rodine-lowyovych-a-autorske-setkani-ve-znojme.md",
+    "createdAt": "2026-06-12T18:06:10.918Z"
+  }
+]
