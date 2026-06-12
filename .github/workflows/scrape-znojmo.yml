@@ -33,7 +33,7 @@ jobs:
           ZNOJMO_PRESS_SOURCE_URL: ${{ vars.ZNOJMO_PRESS_SOURCE_URL || 'https://www.znojmocity.cz/' }}
 
       - name: Commit generated drafts
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Add Znojmo press release drafts"
           file_pattern: "src/content/articles/*.md data/seen.json"
