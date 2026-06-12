@@ -35,13 +35,23 @@ const articlesDir = path.join(rootDir, "src", "content", "articles");
 const sourceName = "Město Znojmo";
 const maxItems = Number(process.env.ZNOJMO_MAX_ITEMS ?? "10");
 
-const pressSourceUrl = requiredEnv("ZNOJMO_PRESS_SOURCE_URL");
-const openAiKey = requiredEnv("OPENAI_API_KEY");
+const pressSourceUrl = process.env.ZNOJMO_PRESS_SOURCE_URL?.trim();
+const openAiKey = process.env.OPENAI_API_KEY?.trim();
 const openAiModel = process.env.OPENAI_MODEL ?? "gpt-4.1-mini";
 
-const client = new OpenAI({ apiKey: openAiKey });
+const client = openAiKey ? new OpenAI({ apiKey: openAiKey }) : null;
 
 async function main() {
+  if (!pressSourceUrl) {
+    console.log("Skipping scrape: missing env ZNOJMO_PRESS_SOURCE_URL.");
+    return;
+  }
+
+  if (!openAiKey) {
+    console.log("Skipping scrape: missing env OPENAI_API_KEY.");
+    return;
+  }
+
   const seen = await readSeen();
   const listHtml = await fetchText(pressSourceUrl);
   const sourceItems = extractSourceItems(listHtml, pressSourceUrl).slice(0, maxItems);
@@ -196,6 +206,10 @@ function extractDetail(html: string, fallback: SourceItem) {
 }
 
 async function createDraftWithOpenAI(originalTitle: string, sourceDate: string, sourceText: string): Promise<ArticleDraft> {
+  if (!client) {
+    throw new Error("OpenAI client is not configured.");
+  }
+
   const response = await client.responses.create({
     model: openAiModel,
     input: [
@@ -359,15 +373,6 @@ function slugify(value: string): string {
     .slice(0, 80) || "navrh-clanku";
 }
 
-function requiredEnv(name: string): string {
-  const value = process.env[name];
-
-  if (!value) {
-    throw new Error(`Missing env ${name}.`);
-  }
-
-  return value;
-}
 
 main().catch((error) => {
   console.error(error);
