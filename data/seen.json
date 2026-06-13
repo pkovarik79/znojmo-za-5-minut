@@ -62,5 +62,45 @@
     "sourceDate": "2026-06-10",
     "createdFile": "src/content/articles/kniha-o-zidovske-rodine-lowyovych-a-autorske-setkani-ve-znojme.md",
     "createdAt": "2026-06-12T18:06:10.918Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/senior%2Dtaxi%2Dznojmo%2Dma%2Dpres%2D150%2Dregistrovanych%2Dobjednavani%2Djizd%2Dzacne%2D15%2Dcervna/d-108957",
+    "contentHash": "a8d38594d94c62c9b73fa5ea19584d4722285474b3901fa82bdf7abde59e4061",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-06-12",
+    "createdFile": "src/content/articles/znojmo-spustilo-pro-seniory-sluzbu-senior-taxi-s-vozy-pro-vozickare.md",
+    "createdAt": "2026-06-13T09:33:31.776Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/prazdninovy%2Dprovoz%2Dmaterskych%2Dskol%2Dve%2Dznojme/d-108948",
+    "contentHash": "cd602a4ea3f4e0c118c7f906113274ad565408a9b797834a6c942cd4bc429075",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-06-12",
+    "createdFile": "src/content/articles/materske-skoly-ve-znojme-budou-koncem-srpna-zcasti-uzavreny-kvuli-skoleni.md",
+    "createdAt": "2026-06-13T09:33:40.266Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/seniorum%2Dpomaha%2Dorientovat%2Dse%2Dv%2Ddigitalnim%2Dsvete%2Dprojekt%2Duci%2Djak%2Dna%2Dtechnologie%2Dbezpecne%2Da%2Ds%2Djistotou/d-107062",
+    "contentHash": "715186e7d94fd97a6a2048d39bf5926d5e62e00fb238a305ce27a5af2d2d9a43",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-04-15",
+    "createdFile": "src/content/articles/znojmsti-seniori-se-uci-pracovat-s-chytrymi-telefony-a-internetem.md",
+    "createdAt": "2026-06-13T09:33:45.575Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/sgrafita%2Dna%2Dobrokove%2Dslavi%2Duspech%2Dprojekt%2Dziskal%2Doceneni%2Dv%2Dcelostatni%2Dsoutezi%2Dpamatka%2Droku/d-106995",
+    "contentHash": "2d11a514d64fd0388057b3e277050c51415c2084c92e0783483b205161eb1ea0",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-04-10",
+    "createdFile": "src/content/articles/obnova-sgrafit-na-obrokove-ziskala-oceneni-pamatka-roku-2025.md",
+    "createdAt": "2026-06-13T09:33:51.584Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/znojmo%2Dudeli%2Dzastitu%2Dvystave%2Dotte%2Dwallish%2Dze%2Dznojma%2Ddo%2Dtel%2Davivu/d-106672",
+    "contentHash": "222341aeb7d29f6a22bf78d629848829a250436845f98e17b3ea767d0844af33",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-03-25",
+    "createdFile": "src/content/articles/vystava-otte-wallish-brno-2026.md",
+    "createdAt": "2026-06-13T09:33:57.760Z"
   }
 ]
