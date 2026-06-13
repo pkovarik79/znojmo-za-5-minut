@@ -5,7 +5,7 @@ date: "2026-06-12"
 sourceName: "Město Znojmo"
 sourceDate: "2026-06-12"
 sourceUrl: "https://www.znojmocity.cz/radnicni%2Dvez%2Dve%2Dznojme%2Dje%2Dnejlepe%2Dopravenou%2Dpamatkou%2Djizni%2Dmoravy/d-108965"
-draft: true
+draft: false
 excerpt: "Radniční věž, ikona historického centra Znojma, byla po náročné rekonstrukci oceněna Jihomoravským krajem za zachování historické hodnoty a zpřístupnění veřejnosti."
 answerQuestion: "Co bylo oceněno v souvislosti s radniční věží v Znojmě?"
 answerText: "Radniční věž v Znojmě byla oceněna Jihomoravským krajem za citlivou a náročnou rekonstrukci, která zachovala historickou hodnotu památky, opravila její poškozené části a zpřístupnila ji veřejnosti v souladu s moderními požadavky."

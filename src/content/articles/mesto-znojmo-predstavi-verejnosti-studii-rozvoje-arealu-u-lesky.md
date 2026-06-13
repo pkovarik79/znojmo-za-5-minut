@@ -5,7 +5,7 @@ date: "2026-06-12"
 sourceName: "Město Znojmo"
 sourceDate: "2026-06-11"
 sourceUrl: "https://www.znojmocity.cz/tenisove%2Dkurty%2Dleska%2Djako%2Dmoderni%2Dsportovni%2Dareal%2Dmesto%2Dzve%2Dverejnost%2Dk%2Dprojednani%2Dstudie/d-108835"
-draft: true
+draft: false
 excerpt: "Znojmo zve obyvatele na veřejné projednání studie zaměřené na obnovu a rozvoj sportovního areálu u Lesky, který je v současné době využíván tenisovým klubem."
 answerQuestion: "Jaké jsou plány města Znojma s areálem u Lesky?"
 answerText: "Město Znojmo plánuje obnovu a rozvoj areálu u Lesky, který je zatím využíván tenisovým klubem. Studie rozvoje zahrnuje obnovu tenisových a volejbalových kurtů, výstavbu tenisové haly, zlepšení zázemí pro sportovce, řešení parkování a přemístění lezecké věže. Součástí je také veřejné projednání, kde budou shromažďovány podněty od občanů."

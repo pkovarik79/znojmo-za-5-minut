@@ -5,7 +5,7 @@ date: "2026-06-12"
 sourceName: "Město Znojmo"
 sourceDate: "2026-06-12"
 sourceUrl: "https://www.znojmocity.cz/#panel0"
-draft: true
+draft: false
 excerpt: "Přehled aktuálních informací z města Znojma včetně významného ocenění radniční věže, novinek v dopravě pro seniory a plánů na letní provoz mateřských škol."
 answerQuestion: "Co je nového v Znojmě k 12. červnu 2026?"
 answerText: "Znojmo získalo ocenění za opravu radniční věže, zahajuje objednávání služeb Senior taxi, plánuje omezení letního provozu mateřských škol a zve veřejnost k projednání revitalizace tenisových kurtů."

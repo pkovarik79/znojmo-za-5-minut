@@ -5,7 +5,7 @@ date: "2026-06-12"
 sourceName: "Město Znojmo"
 sourceDate: "2026-06-12"
 sourceUrl: "https://www.znojmocity.cz/mesto%2Da%2Durad/ms-95902/p1=95902"
-draft: true
+draft: false
 excerpt: "Městský úřad Znojmo informuje o dostupných kontaktech, dokumentech a službách pro občany včetně elektronických služeb a praktických návodů."
 answerQuestion: "Jaké služby a informace nabízí městský úřad Znojmo na svém webu?"
 answerText: "Městský úřad Znojmo nabízí na svém webu kontakty na vedení a odbory města, úřední desku, dokumenty, praktické návody k vyřízení různých záležitostí, pracovní příležitosti a elektronické služby umožňující vyřízení požadavků online."

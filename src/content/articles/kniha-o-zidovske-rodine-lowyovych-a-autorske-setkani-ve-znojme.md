@@ -5,7 +5,7 @@ date: "2026-06-12"
 sourceName: "Město Znojmo"
 sourceDate: "2026-06-10"
 sourceUrl: "https://www.znojmocity.cz/mesto%2Dpodpori%2Dzastitou%2Dvydani%2Dknihy%2Dpripominajici%2Dhistorii%2Dznojemske%2Dzidovske%2Drodiny%2Dlowyovych/d-108801"
-draft: true
+draft: false
 excerpt: "Ve Znojmě vyjde kniha přibližující osudy významné židovské rodiny Löwyových. Autorské setkání s debatou proběhne 23. září 2026 v Jihomoravském muzeu."
 answerQuestion: "Kdy a kde se uskuteční autorské setkání ke knize o rodině Löwyových?"
 answerText: "Autorské setkání proběhne 23. září 2026 v Jihomoravském muzeu ve Znojmě."
