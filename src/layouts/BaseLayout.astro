@@ -21,17 +21,13 @@ const nav = [
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body class="bg-[#f7f6f1] font-sans antialiased">
-    <header class="border-b border-stone-300 bg-[#fbfaf6]">
-      <div class="mx-auto flex max-w-6xl items-center justify-between border-b border-stone-200 px-4 py-2 text-xs text-stone-600">
-        <span>Stručný přehled zpráv města Znojma</span>
-        <span>Aktualizováno průběžně</span>
-      </div>
-      <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-5">
-        <a href="/" class="text-2xl font-extrabold tracking-normal text-[#173f2d]">Znojmo za 5 minut</a>
-        <nav class="flex items-center gap-1 text-sm font-semibold text-stone-700">
+  <body class="bg-[#fbfaf7] font-sans text-[#171717] antialiased">
+    <header class="border-b border-stone-200 bg-[#fbfaf7]/95">
+      <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-5 md:py-6">
+        <a href="/" class="text-[1.7rem] font-black tracking-normal text-[#123d2a] md:text-3xl">Znojmo za 5 minut</a>
+        <nav class="flex items-center gap-1 text-sm font-semibold text-stone-700 md:text-base">
           {nav.map((item) => (
-            <a class="px-3 py-2 hover:bg-stone-100 hover:text-ink" href={item.href}>{item.label}</a>
+            <a class="px-2.5 py-2 hover:text-[#9b3324] md:px-3" href={item.href}>{item.label}</a>
           ))}
         </nav>
       </div>
@@ -39,10 +35,10 @@ const nav = [
     <main>
       <slot />
     </main>
-    <footer class="border-t border-stone-300 bg-[#fbfaf6]">
-      <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-8 text-sm text-stone-600 md:flex-row md:items-center md:justify-between">
-        <span>Neoficiální komunitní přehled tiskových zpráv města Znojma.</span>
-        <span>Zdrojové odkazy se veřejně nezobrazují.</span>
+    <footer class="mt-16 border-t border-stone-200 bg-[#fbfaf7]">
+      <div class="mx-auto flex max-w-5xl flex-col gap-2 px-5 py-8 text-sm text-stone-500 md:flex-row md:items-center md:justify-between">
+        <span>Znojmo za 5 minut</span>
+        <span>Neoficiální komunitní přehled.</span>
       </div>
     </footer>
   </body>

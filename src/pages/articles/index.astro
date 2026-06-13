@@ -10,21 +10,21 @@ const formatDate = (date: string) =>
 ---
 
 <BaseLayout title="Články | Znojmo za 5 minut">
-  <section class="mx-auto max-w-6xl px-4 py-10">
-    <div class="border-b border-stone-300 pb-4">
-      <p class="text-sm font-semibold uppercase tracking-wide text-[#9b3324]">Archiv</p>
-      <h1 class="mt-2 text-4xl font-extrabold text-[#17202a]">Všechny články</h1>
+  <section class="mx-auto max-w-5xl px-5 py-12 md:py-16">
+    <div class="border-b border-stone-200 pb-6">
+      <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#9b3324]">Archiv</p>
+      <h1 class="mt-4 text-4xl font-black leading-none text-[#171717] md:text-6xl">Všechny články</h1>
     </div>
-    <div class="mt-6 divide-y divide-stone-300">
+    <div class="mt-4 divide-y divide-stone-200">
       {articles.map((article) => (
-        <article class="grid gap-4 py-6 md:grid-cols-[170px_1fr]">
-          <p class="text-sm text-stone-600">{formatDate(article.data.date)}</p>
+        <article class="grid gap-4 py-8 md:grid-cols-[170px_1fr]">
+          <p class="text-sm text-stone-500">{formatDate(article.data.date)}</p>
           <div>
             <p class="text-sm text-stone-500">Zdroj: {article.data.sourceName}, {formatDate(article.data.sourceDate)}</p>
-            <h2 class="mt-2 text-2xl font-extrabold leading-tight text-[#17202a]">
+            <h2 class="mt-2 max-w-3xl text-3xl font-black leading-tight text-[#171717]">
               <a class="hover:text-[#9b3324]" href={`/articles/${article.slug}`}>{article.data.title}</a>
             </h2>
-            <p class="mt-3 leading-7 text-stone-700">{article.data.excerpt ?? article.data.answerText}</p>
+            <p class="mt-3 max-w-3xl font-serif text-lg leading-8 text-stone-700">{article.data.excerpt ?? article.data.answerText}</p>
           </div>
         </article>
       ))}

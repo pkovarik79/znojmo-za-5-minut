@@ -3,15 +3,20 @@
 @tailwind utilities;
 
 html {
-  background: #faf8f3;
-  color: #1f2933;
+  background: #fbfaf7;
+  color: #171717;
 }
 
 body {
   min-height: 100vh;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: #f2c078;
-  color: #1f2933;
+  background: #eadfcb;
+  color: #171717;
+}
+
+a {
+  text-underline-offset: 0.16em;
 }

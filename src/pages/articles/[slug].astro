@@ -18,14 +18,14 @@ const formatDate = (date: string) =>
 ---
 
 <BaseLayout title={`${article.data.title} | Znojmo za 5 minut`}>
-  <article class="mx-auto max-w-3xl px-4 py-10">
-    <p class="text-sm font-medium text-stone-600">Zdroj: {article.data.sourceName}, {formatDate(article.data.sourceDate)}</p>
-    <h1 class="mt-3 text-4xl font-extrabold leading-tight text-[#17202a] md:text-5xl">{article.data.title}</h1>
-    <section class="mt-8 border-l-4 border-[#173f2d] bg-white px-5 py-4 shadow-sm">
-      <h2 class="text-lg font-extrabold text-[#173f2d]">{article.data.answerQuestion}</h2>
-      <p class="mt-2 text-lg leading-8 text-stone-700">{article.data.answerText}</p>
+  <article class="mx-auto max-w-3xl px-5 py-12 md:py-16">
+    <p class="text-sm font-medium text-stone-500">Zdroj: {article.data.sourceName}, {formatDate(article.data.sourceDate)}</p>
+    <h1 class="mt-5 text-4xl font-black leading-[1.03] text-[#171717] md:text-6xl">{article.data.title}</h1>
+    <section class="mt-9 border-l-2 border-[#123d2a] pl-6">
+      <h2 class="text-xl font-black leading-snug text-[#123d2a]">{article.data.answerQuestion}</h2>
+      <p class="mt-3 font-serif text-xl leading-9 text-stone-700">{article.data.answerText}</p>
     </section>
-    <div class="prose prose-stone mt-8 max-w-none prose-headings:text-[#17202a] prose-a:text-[#9b3324]">
+    <div class="prose prose-stone mt-10 max-w-none font-serif prose-p:text-xl prose-p:leading-9 prose-p:text-stone-800 prose-headings:font-sans prose-headings:font-black prose-headings:text-[#171717] prose-a:text-[#9b3324]">
       <Content />
     </div>
   </article>
