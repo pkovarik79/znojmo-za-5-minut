@@ -10,6 +10,8 @@ const secondary = articles.slice(1, 7);
 
 const formatDate = (date: string) =>
   new Intl.DateTimeFormat("cs-CZ", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${date}T12:00:00Z`));
+
+const publicSourceName = "Znojmocity.cz";
 ---
 
 <BaseLayout>
@@ -28,7 +30,7 @@ const formatDate = (date: string) =>
 
     {lead && (
       <article class="border-b border-stone-200 pb-9">
-        <p class="text-sm font-medium text-stone-500">Zdroj: {lead.data.sourceName}, {formatDate(lead.data.sourceDate)}</p>
+        <p class="text-sm font-medium text-stone-500">Zdroj: {publicSourceName}, {formatDate(lead.data.sourceDate)}</p>
         <h3 class="mt-3 max-w-4xl text-3xl font-black leading-[1.04] text-[#171717] md:text-5xl">
           <a class="hover:text-[#9b3324]" href={`/articles/${lead.slug}`}>{lead.data.title}</a>
         </h3>

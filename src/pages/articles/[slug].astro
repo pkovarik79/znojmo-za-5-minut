@@ -15,11 +15,13 @@ const { Content } = await article.render();
 
 const formatDate = (date: string) =>
   new Intl.DateTimeFormat("cs-CZ", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${date}T12:00:00Z`));
+
+const publicSourceName = "Znojmocity.cz";
 ---
 
 <BaseLayout title={`${article.data.title} | Znojmo za 5 minut`}>
   <article class="mx-auto max-w-3xl px-5 py-12 md:py-16">
-    <p class="text-sm font-medium text-stone-500">Zdroj: {article.data.sourceName}, {formatDate(article.data.sourceDate)}</p>
+    <p class="text-sm font-medium text-stone-500">Zdroj: {publicSourceName}, {formatDate(article.data.sourceDate)}</p>
     <h1 class="mt-5 text-4xl font-black leading-[1.03] text-[#171717] md:text-6xl">{article.data.title}</h1>
     <section class="mt-9 border-l-2 border-[#123d2a] pl-6">
       <h2 class="text-xl font-black leading-snug text-[#123d2a]">{article.data.answerQuestion}</h2>

@@ -7,6 +7,8 @@ const articles = (await getCollection("articles", ({ data }) => !data.draft))
 
 const formatDate = (date: string) =>
   new Intl.DateTimeFormat("cs-CZ", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${date}T12:00:00Z`));
+
+const publicSourceName = "Znojmocity.cz";
 ---
 
 <BaseLayout title="Články | Znojmo za 5 minut">
@@ -20,7 +22,7 @@ const formatDate = (date: string) =>
         <article class="grid gap-4 py-8 md:grid-cols-[170px_1fr]">
           <p class="text-sm text-stone-500">{formatDate(article.data.date)}</p>
           <div>
-            <p class="text-sm text-stone-500">Zdroj: {article.data.sourceName}, {formatDate(article.data.sourceDate)}</p>
+            <p class="text-sm text-stone-500">Zdroj: {publicSourceName}, {formatDate(article.data.sourceDate)}</p>
             <h2 class="mt-2 max-w-3xl text-3xl font-black leading-tight text-[#171717]">
               <a class="hover:text-[#9b3324]" href={`/articles/${article.slug}`}>{article.data.title}</a>
             </h2>
