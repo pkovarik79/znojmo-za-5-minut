@@ -5,7 +5,7 @@ date: "2026-06-12"
 sourceName: "Město Znojmo"
 sourceDate: "2021-09-09"
 sourceUrl: "https://www.znojmo-zdravemesto.cz/"
-draft: false
+draft: true
 excerpt: "Město Znojmo pořádá v neděli 14. června cyklojízdu na nové sedmikilometrové cyklostezce spojující Znojmo a Chvalovice. Akce zakončí kampaň Znojmo – do práce na kole a pěšky a je určena rodinám i veřejnosti."
 answerQuestion: "Kdy a kde se koná cyklo vyjížďka na nové cyklostezce v Znojmě?"
 answerText: "Cyklo vyjížďka se koná v neděli 14. června. Sraz je v 10:00 na parkovišti restaurace U Tří jasanů v Novém Šaldorfu."

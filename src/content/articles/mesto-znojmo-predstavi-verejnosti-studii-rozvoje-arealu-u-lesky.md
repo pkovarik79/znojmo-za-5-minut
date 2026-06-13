@@ -1,21 +1,21 @@
 ---
-title: "Město Znojmo představí veřejnosti studii rozvoje areálu u Lesky"
+title: "Znojmo ukáže plány pro areál u Lesky. Lidé je mohou připomínkovat"
 slug: "mesto-znojmo-predstavi-verejnosti-studii-rozvoje-arealu-u-lesky"
 date: "2026-06-12"
 sourceName: "Město Znojmo"
 sourceDate: "2026-06-11"
 sourceUrl: "https://www.znojmocity.cz/tenisove%2Dkurty%2Dleska%2Djako%2Dmoderni%2Dsportovni%2Dareal%2Dmesto%2Dzve%2Dverejnost%2Dk%2Dprojednani%2Dstudie/d-108835"
 draft: false
-excerpt: "Znojmo zve obyvatele na veřejné projednání studie zaměřené na obnovu a rozvoj sportovního areálu u Lesky, který je v současné době využíván tenisovým klubem."
-answerQuestion: "Jaké jsou plány města Znojma s areálem u Lesky?"
-answerText: "Město Znojmo plánuje obnovu a rozvoj areálu u Lesky, který je zatím využíván tenisovým klubem. Studie rozvoje zahrnuje obnovu tenisových a volejbalových kurtů, výstavbu tenisové haly, zlepšení zázemí pro sportovce, řešení parkování a přemístění lezecké věže. Součástí je také veřejné projednání, kde budou shromažďovány podněty od občanů."
+excerpt: "Město chystá veřejné projednání studie pro sportovní areál u Lesky. Řeší kurty, zázemí, parkování i možnou tenisovou halu."
+answerQuestion: "Co se má v areálu u Lesky změnit?"
+answerText: "Studie počítá s obnovou tenisových a volejbalových kurtů, lepším zázemím pro sportovce, řešením parkování, přemístěním lezecké věže a možností postavit tenisovou halu. Město chce návrh projednat s veřejností a sesbírat připomínky."
 riskLevel: "low"
 ---
 
-Místostarosta města Znojmo Jakub Malačka zdůraznil, že areál u Lesky má velký potenciál, avšak jeho technický stav je špatný a město musí řešit jeho další osud. Již od roku 2022 se zvažují možnosti rozvoje areálu za účasti tehdejšího ředitele Národní sportovní agentury a s vědomím potřeby dotačních prostředků pro kvalitní sportovní zázemí.
+Znojmo chce veřejnosti představit studii, která řeší budoucnost sportovního areálu u Lesky. Podle místostarosty Jakuba Malačky má místo velký potenciál, současný stav areálu je ale špatný a město musí rozhodnout, jak s ním dál naloží.
 
-Areál je dlouhodobě využíván zejména k tenisovým a dalším sportovním aktivitám. Tenisový klub má areál v užívání do podzimu tohoto roku. Město se již nyní připravuje na postupnou obnovu areálu, která zahrnuje tenisové kurty, zázemí pro sportovce, úpravu volejbalových kurtů, možnost vybudování tenisové haly, řešení parkování a také přemístění lezecké věže.
+Areál dnes slouží hlavně tenisu a dalším sportům. Tenisový klub ho má v užívání do podzimu. Studie navrhuje obnovu kurtů, úpravu volejbalového zázemí, nové prostory pro sportovce, řešení parkování a také přemístění lezecké věže.
 
-Studii rozvoje představí na veřejném projednání autor, architekt Ing. arch. Viktor Drobný ze společnosti Sportovní projekty spol. s r.o. Podněty z veřejné diskuse město využije v dalších fázích přípravy projektu.
+Ve hře je i tenisová hala. Studii na veřejném projednání představí její autor, architekt Viktor Drobný ze společnosti Sportovní projekty. Podněty od obyvatel chce město využít při další přípravě projektu.
 
-Pozvánka na veřejné projednání je vyzváním k aktivní účasti občanů, kteří tak mají šanci se seznámit se záměrem a vznést své dotazy či připomínky.
+Smyslem setkání je ukázat návrh ještě před dalšími kroky a dát lidem možnost položit otázky nebo navrhnout úpravy.

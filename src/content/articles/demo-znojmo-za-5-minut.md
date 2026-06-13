@@ -5,7 +5,7 @@ date: "2026-06-05"
 sourceName: "Město Znojmo"
 sourceDate: "2026-06-05"
 sourceUrl: "https://example.com/internal-demo"
-draft: false
+draft: true
 excerpt: "Ukázkový článek ukazuje, jak budou krátká shrnutí tiskových zpráv na webu vypadat."
 answerQuestion: "Co je hlavní zpráva?"
 answerText: "Web převádí tiskové zprávy do stručnější podoby a publikuje jen schválené články."

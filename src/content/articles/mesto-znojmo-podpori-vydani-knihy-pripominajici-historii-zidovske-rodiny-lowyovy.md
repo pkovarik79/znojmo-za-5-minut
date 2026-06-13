@@ -5,7 +5,7 @@ date: "2026-06-12"
 sourceName: "Město Znojmo"
 sourceDate: "2026-06-10"
 sourceUrl: "https://www.znojmocity.cz/novinky/ds-1222/kontext=1&archiv=1&zanorit=1"
-draft: false
+draft: true
 excerpt: "Rada města Znojma schválila záštitu nad vydáním knihy českého překladu díla Ann Altman, která mapuje osudy židovské rodiny Löwyových."
 answerQuestion: "Jaké kulturní akce město Znojmo podporuje v roce 2026?"
 answerText: "Mezi projekty, které město Znojmo v roce 2026 podporuje, patří i vydání českého překladu knihy o historii židovské rodiny Löwyových s autorským turné, záštita nad výstavou Otte Wallish a festivalem Hudba na vinicích."

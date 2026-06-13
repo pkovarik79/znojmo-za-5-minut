@@ -127,6 +127,7 @@ async function fetchText(url: string): Promise<string> {
 function extractSourceItems(html: string, baseUrl: string): SourceItem[] {
   const $ = cheerio.load(html);
   const items = new Map<string, SourceItem>();
+  const sourceHost = new URL(baseUrl).hostname.replace(/^www\./, "");
 
   $("a[href]").each((_, element) => {
     const href = $(element).attr("href");
@@ -137,10 +138,8 @@ function extractSourceItems(html: string, baseUrl: string): SourceItem[] {
     }
 
     const sourceUrl = new URL(href, baseUrl).toString();
-    const combined = `${title} ${sourceUrl}`.toLowerCase();
-    const looksRelevant = /tisk|zprav|aktual|novink|mesto|město|radnic/.test(combined);
 
-    if (!looksRelevant) {
+    if (!isPressReleaseCandidate(sourceUrl, title, sourceHost)) {
       return;
     }
 
@@ -155,6 +154,23 @@ function extractSourceItems(html: string, baseUrl: string): SourceItem[] {
   });
 
   return [...items.values()].sort((a, b) => b.sourceDate.localeCompare(a.sourceDate));
+}
+
+function isPressReleaseCandidate(sourceUrl: string, title: string, sourceHost: string): boolean {
+  const url = new URL(sourceUrl);
+  const host = url.hostname.replace(/^www\./, "");
+  const path = decodeURIComponent(url.pathname).toLowerCase();
+  const combined = `${title} ${path}`.toLowerCase();
+
+  if (host !== sourceHost || url.hash || !/\/d-\d+/.test(url.pathname)) {
+    return false;
+  }
+
+  if (/zamer|záměr|pronajmu|pronájmu|prodej|uredni|úřední|deska|vyhlaska|vyhláška|verejna-vyhlaska|veřejná-vyhláška/.test(combined)) {
+    return false;
+  }
+
+  return /radnic|sport|studii|studie|knih|pamat|památ|senior|skol|škol|dopr|festival|kultur|vystav|výstav|ocenen|oceněn|novink/.test(combined);
 }
 
 function extractDetail(html: string, fallback: SourceItem) {
@@ -215,16 +231,28 @@ async function createDraftWithOpenAI(originalTitle: string, sourceDate: string, 
     input: [
       {
         role: "system",
-        content: "Jsi český editor lokálního zpravodajství. Piš věcně, stručně a bez spekulací. Vracej pouze validní JSON."
+        content: [
+          "Jsi zkušený český editor lokálního zpravodajství.",
+          "Piš jako redaktor zpravodajského webu: jasně, věcně, česky, v krátkých odstavcích.",
+          "Nepoužívej marketing, úřední jazyk ani AI fráze typu významný krok, komplexní informace, přibližuje novým způsobem, aktivní účast občanů.",
+          "Nepřidávej hodnocení, spekulace ani obecné závěry. Neopisuj celé tiskové zprávy.",
+          "Vracej pouze validní JSON."
+        ].join(" ")
       },
       {
         role: "user",
         content: [
           "Zpracuj tiskovou zprávu města Znojma do návrhu krátkého článku pro web Znojmo za 5 minut.",
           "Výstup musí být JSON s poli: title, slug, excerpt, body, answerQuestion, answerText, riskLevel.",
+          "title piš jako novinový titulek pro běžné čtenáře, ne jako úřední název dokumentu.",
+          "excerpt napiš jednou konkrétní větou bez prázdných slov.",
+          "answerText napiš ve 2 až 3 krátkých větách.",
+          "body napiš jako 3 až 5 krátkých odstavců. Každý odstavec má nést novou informaci.",
           "slug používej bez diakritiky, malými písmeny, oddělený pomlčkami.",
           "riskLevel nastav na low, medium nebo high podle toho, jak moc text vyžaduje lidské ověření.",
           "body vrať jako Markdown bez frontmatteru.",
+          "Nepoužívej slova a obraty: komplexní, významný, přispělo k, je neodmyslitelnou součástí, obyvatelé mají šanci, v souladu s moderními požadavky.",
+          "Pokud text není aktualita nebo tisková zpráva pro veřejnost, nastav riskLevel na high a titulkem naznač, že vyžaduje kontrolu.",
           `Původní titulek: ${originalTitle}`,
           `Datum zdroje: ${sourceDate}`,
           `Text zdroje:\n${sourceText.slice(0, 12000)}`
