@@ -2,15 +2,18 @@
 import "../styles/global.css";
 
 const {
-  title = "Znojmo za 5 minut",
-  description = "Krátké a srozumitelné shrnutí tiskových zpráv města Znojma."
+  title = "2city",
+  description = "Krátký regionální přehled ze Znojma a okolí."
 } = Astro.props;
 
+const currentPath = Astro.url.pathname;
 const nav = [
   { href: "/", label: "Přehled" },
   { href: "/articles", label: "Archiv" },
   { href: "/about", label: "O projektu" }
 ];
+
+const isActive = (href: string) => href === "/" ? currentPath === "/" : currentPath.startsWith(href);
 ---
 
 <!doctype html>
@@ -19,15 +22,22 @@ const nav = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
   </head>
   <body class="bg-[#fbfaf7] font-sans text-[#171717] antialiased">
     <header class="border-b border-stone-200 bg-[#fbfaf7]/95">
-      <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-5 md:py-6">
-        <a href="/" class="text-[1.7rem] font-black tracking-normal text-[#123d2a] md:text-3xl">Znojmo za 5 minut</a>
-        <nav class="flex items-center gap-1 text-sm font-semibold text-stone-700 md:text-base">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5 md:py-6">
+        <a href="/" class="site-logo">2city</a>
+        <nav class="flex items-center gap-1 text-xs font-semibold text-stone-700 sm:text-sm md:text-base">
           {nav.map((item) => (
-            <a class="px-2.5 py-2 hover:text-[#9b3324] md:px-3" href={item.href}>{item.label}</a>
+            <a
+              class:list={["nav-link px-1.5 py-2 hover:text-[#9b3324] sm:px-2.5 md:px-3", isActive(item.href) && "nav-link-active"]}
+              href={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
+            >
+              {item.label}
+            </a>
           ))}
         </nav>
       </div>
@@ -36,9 +46,16 @@ const nav = [
       <slot />
     </main>
     <footer class="mt-16 border-t border-stone-200 bg-[#fbfaf7]">
-      <div class="mx-auto flex max-w-5xl flex-col gap-2 px-5 py-8 text-sm text-stone-500 md:flex-row md:items-center md:justify-between">
-        <span>Znojmo za 5 minut</span>
-        <span>Zdroj: Znojmocity.cz</span>
+      <div class="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-8 text-sm text-stone-500 md:flex-row md:items-center md:justify-between">
+        <div>
+          <a class="site-logo text-[1.45rem]" href="/">2city</a>
+          <p class="mt-2 max-w-md">Znojmo a okolí v krátkém přehledu.</p>
+        </div>
+        <nav class="flex flex-wrap gap-4 font-semibold">
+          {nav.map((item) => (
+            <a class="hover:text-[#9b3324]" href={item.href}>{item.label}</a>
+          ))}
+        </nav>
       </div>
     </footer>
   </body>

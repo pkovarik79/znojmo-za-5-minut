@@ -17,11 +17,13 @@ type SourceItem = {
   title: string;
   sourceDate: string;
   sourceUrl: string;
+  sourceName: string;
 };
 
 type ArticleDraft = {
   title: string;
   slug: string;
+  category: "zpravy" | "kultura" | "sport" | "akce" | "servis";
   excerpt: string;
   body: string;
   answerQuestion: string;
@@ -32,18 +34,37 @@ type ArticleDraft = {
 const rootDir = process.cwd();
 const seenPath = path.join(rootDir, "data", "seen.json");
 const articlesDir = path.join(rootDir, "src", "content", "articles");
-const sourceName = "Město Znojmo";
-const maxItems = Number(process.env.ZNOJMO_MAX_ITEMS ?? "10");
+const maxItems = Number(process.env.ZNOJMO_MAX_ITEMS ?? "20");
+const defaultTipSourceUrls = [
+  "https://www.znojemsko.cz/",
+  "https://znojemsky.denik.cz/",
+  "https://www.idnes.cz/brno/zpravy/zpravy-ze-znojma-a-okoli.K8076",
+  "https://hcorli.cz/",
+  "https://www.1scznojmo.cz/",
+  "https://www.muzeumznojmo.cz/",
+  "https://znojemskabeseda.com/",
+  "https://www.znojmozije.cz/",
+  "https://www.kinoznojmo.cz/",
+  "https://webext1.nemzn.cz/",
+  "https://lesyznojmo.cz/",
+  "https://www.gymzn.cz/",
+  "https://znojmo.charita.cz/"
+];
 
 const pressSourceUrl = process.env.ZNOJMO_PRESS_SOURCE_URL?.trim();
+const tipSourceUrls = splitEnvUrls(process.env.ZNOJMO_TIP_SOURCE_URLS);
 const openAiKey = process.env.OPENAI_API_KEY?.trim();
 const openAiModel = process.env.OPENAI_MODEL ?? "gpt-4.1-mini";
 
 const client = openAiKey ? new OpenAI({ apiKey: openAiKey }) : null;
 
 async function main() {
-  if (!pressSourceUrl) {
-    console.log("Skipping scrape: missing env ZNOJMO_PRESS_SOURCE_URL.");
+  const sourceUrls = [...new Set([pressSourceUrl, ...(tipSourceUrls.length > 0 ? tipSourceUrls : defaultTipSourceUrls)])].filter(
+    (url): url is string => Boolean(url)
+  );
+
+  if (sourceUrls.length === 0) {
+    console.log("Skipping scrape: missing env ZNOJMO_PRESS_SOURCE_URL or ZNOJMO_TIP_SOURCE_URLS.");
     return;
   }
 
@@ -53,8 +74,12 @@ async function main() {
   }
 
   const seen = await readSeen();
-  const listHtml = await fetchText(pressSourceUrl);
-  const sourceItems = extractSourceItems(listHtml, pressSourceUrl).slice(0, maxItems);
+  const sourceItems = (
+    await Promise.all(sourceUrls.map(async (sourceUrl) => extractSourceItems(await fetchText(sourceUrl), sourceUrl)))
+  )
+    .flat()
+    .sort((a, b) => b.sourceDate.localeCompare(a.sourceDate))
+    .slice(0, maxItems);
 
   if (sourceItems.length === 0) {
     console.log("No press release links found.");
@@ -76,13 +101,13 @@ async function main() {
       continue;
     }
 
-    const draft = await createDraftWithOpenAI(detail.title, detail.sourceDate, detail.text);
+    const draft = await createDraftWithOpenAI(detail.title, detail.sourceDate, detail.text, detail.sourceName, item.sourceUrl);
     const fileName = `${draft.slug}.md`;
     const createdFile = path.join("src", "content", "articles", fileName);
     const filePath = path.join(rootDir, createdFile);
 
     await mkdir(articlesDir, { recursive: true });
-    await writeFile(filePath, toMarkdown(draft, detail.sourceDate, item.sourceUrl), "utf8");
+    await writeFile(filePath, toMarkdown(draft, detail.sourceDate, item.sourceUrl, detail.sourceName), "utf8");
 
     seen.push({
       sourceUrl: item.sourceUrl,
@@ -113,7 +138,7 @@ async function readSeen(): Promise<SeenItem[]> {
 async function fetchText(url: string): Promise<string> {
   const response = await fetch(url, {
     headers: {
-      "User-Agent": "ZnojmoZa5MinutBot/0.1 (+https://znojmo-za-5-minut.pages.dev)"
+      "User-Agent": "2cityBot/0.1 (+https://znojmo-za-5-minut.pages.dev)"
     }
   });
 
@@ -149,7 +174,8 @@ function extractSourceItems(html: string, baseUrl: string): SourceItem[] {
     items.set(sourceUrl, {
       title,
       sourceDate,
-      sourceUrl
+      sourceUrl,
+      sourceName: sourceNameFromUrl(sourceUrl)
     });
   });
 
@@ -162,7 +188,11 @@ function isPressReleaseCandidate(sourceUrl: string, title: string, sourceHost: s
   const path = decodeURIComponent(url.pathname).toLowerCase();
   const combined = `${title} ${path}`.toLowerCase();
 
-  if (host !== sourceHost || url.hash || !/\/d-\d+/.test(url.pathname)) {
+  if (host !== sourceHost || url.hash) {
+    return false;
+  }
+
+  if (host.includes("znojmocity.cz") && !/\/d-\d+/.test(url.pathname)) {
     return false;
   }
 
@@ -170,7 +200,11 @@ function isPressReleaseCandidate(sourceUrl: string, title: string, sourceHost: s
     return false;
   }
 
-  return /radnic|sport|studii|studie|knih|pamat|památ|senior|skol|škol|dopr|festival|kultur|vystav|výstav|ocenen|oceněn|novink/.test(combined);
+  if (host.includes("denik.cz") || host.includes("idnes.cz") || host.includes("znojemsko.cz")) {
+    return /znojm|moravsk|jihomorav|dukova|nezamest|nezaměst|ekonom|prace|práce|dopr|nemoc|skol|škol|polic|hasic|hasič|soud|sport|kultur|festival|volby|energie/.test(combined);
+  }
+
+  return /radnic|sport|studii|studie|knih|pamat|památ|senior|skol|škol|dopr|festival|kultur|vystav|výstav|ocenen|oceněn|novink|nemoc|charit|kino|muze/.test(combined);
 }
 
 function extractDetail(html: string, fallback: SourceItem) {
@@ -217,11 +251,12 @@ function extractDetail(html: string, fallback: SourceItem) {
   return {
     title,
     sourceDate,
-    text
+    text,
+    sourceName: fallback.sourceName
   };
 }
 
-async function createDraftWithOpenAI(originalTitle: string, sourceDate: string, sourceText: string): Promise<ArticleDraft> {
+async function createDraftWithOpenAI(originalTitle: string, sourceDate: string, sourceText: string, sourceName: string, sourceUrl: string): Promise<ArticleDraft> {
   if (!client) {
     throw new Error("OpenAI client is not configured.");
   }
@@ -232,27 +267,44 @@ async function createDraftWithOpenAI(originalTitle: string, sourceDate: string, 
       {
         role: "system",
         content: [
-          "Jsi zkušený český editor lokálního zpravodajství.",
-          "Piš jako redaktor zpravodajského webu: jasně, věcně, česky, v krátkých odstavcích.",
+          "Jsi zkušený český editor regionálního zpravodajství pro Znojmo a okolí.",
+          "Piš jako redaktor běžného českého regionálního webu: jasně, věcně, česky, v krátkých odstavcích.",
+          "Text nesmí vyznít jako PR radnice, úřadu, městské firmy ani politika.",
+          "Necituj politiky a neuváděj jejich jména. Výjimkou je pouze novinářská kritika, kontrola moci nebo reflexe sporného jednání.",
+          "Neformuluj titulky tak, že město něco chválíš nebo prezentuješ. Hledej neutrální otázku, dopad na lidi nebo konkrétní změnu.",
+          "U zdrojů z radnice nebo městských organizací vždy polož čtenářskou otázku: Co se mění? Koho se to dotkne? Kolik to bude stát? Kdy to začne? Co zůstává nejasné? Alespoň title nebo answerQuestion musí být otázka.",
           "Nepoužívej marketing, úřední jazyk ani AI fráze typu významný krok, komplexní informace, přibližuje novým způsobem, aktivní účast občanů.",
           "Nepřidávej hodnocení, spekulace ani obecné závěry. Neopisuj celé tiskové zprávy.",
+          "Nikdy do článku nepiš redakční poznámky, metodiku výběru témat ani věty o tom, že pro regionální přehled má něco smysl. Čtenář má dostat zprávu, ne vysvětlení procesu.",
+          "Nepoužívej prázdné závěrečné disclaimerové věty typu aktuální informace ověřte na webu, podrobnosti najdete u pořadatele, termíny se mohou měnit. Pokud je termín nebo místo nejisté, napiš konkrétně, co není jisté, jinak větu vynech.",
+          "Zdroje jako Znojemsko.cz, Znojemský deník nebo iDNES používej jen jako redakční tip na téma. Nepřebírej jejich zamčené ani autorské texty. Pokud téma pochází z média, hledej původní veřejný zdroj, například obec, instituci, pořadatele, policii, hasiče, nemocnici, školu, úřad práce, ČEZ, dopravce nebo sportovní klub.",
+          "Silné regionální téma může být i mimo samotné město: Dukovany, ekonomika, zaměstnanost, doprava, zdravotnictví, školy, bezpečnost, větší kulturní akce nebo sport. Zařaď ho jen tehdy, když má zřejmý dopad na lidi ze Znojma a okolí.",
+          "Pokud původní veřejný zdroj nelze dohledat, napiš pouze velmi stručný přehled z veřejně dostupného titulku a perexu, jasně drž nízkou míru detailu a nastav riskLevel na high.",
           "Vracej pouze validní JSON."
         ].join(" ")
       },
       {
         role: "user",
         content: [
-          "Zpracuj tiskovou zprávu města Znojma do návrhu krátkého článku pro web Znojmo za 5 minut.",
-          "Výstup musí být JSON s poli: title, slug, excerpt, body, answerQuestion, answerText, riskLevel.",
-          "title piš jako novinový titulek pro běžné čtenáře, ne jako úřední název dokumentu.",
+          "Zpracuj zdrojový text do návrhu krátkého regionálního článku pro web 2city.",
+          "Výstup musí být JSON s poli: title, slug, category, excerpt, body, answerQuestion, answerText, riskLevel.",
+          "category nastav na jednu z hodnot: zpravy, kultura, sport, akce, servis.",
+          "Záměry pronájmu, úřední desku, obecné rozcestníky a interní úřední provoz raději označ jako servis a riskLevel high.",
+          "title piš jako neutrální novinový titulek pro běžné čtenáře, ne jako úřední název dokumentu ani PR sdělení.",
+          "Dobré titulky: Jaká bude budoucnost Lesky? Kdy začne senior taxi? Co se mění v prázdninovém provozu školek?",
+          "Špatné titulky: Město představí studii, Radnice zve veřejnost, Projekt získal významné ocenění.",
           "excerpt napiš jednou konkrétní větou bez prázdných slov.",
           "answerText napiš ve 2 až 3 krátkých větách.",
           "body napiš jako 3 až 5 krátkých odstavců. Každý odstavec má nést novou informaci.",
+          "Každý odstavec musí obsahovat konkrétní informaci z textu: kdo, co, kdy, kde, dopad, změna, číslo, termín nebo kontext. Pokud takovou informaci nemáš, odstavec nepiš.",
+          "U článků typu akce nebo přehled akcí nepiš obecné kategorie. Uveď konkrétní názvy akcí, termíny, místa nebo pořadatele. Pokud nemáš aspoň dva konkrétní příklady, nastav riskLevel na high.",
           "slug používej bez diakritiky, malými písmeny, oddělený pomlčkami.",
           "riskLevel nastav na low, medium nebo high podle toho, jak moc text vyžaduje lidské ověření.",
           "body vrať jako Markdown bez frontmatteru.",
-          "Nepoužívej slova a obraty: komplexní, významný, přispělo k, je neodmyslitelnou součástí, obyvatelé mají šanci, v souladu s moderními požadavky.",
+          "Nepoužívej slova a obraty: komplexní, významný, přispělo k, je neodmyslitelnou součástí, obyvatelé mají šanci, v souladu s moderními požadavky, radnice zve, město představí, pro regionální přehled, aktuální informace, je nejlepší kontrolovat, vyplatí se ověřit.",
           "Pokud text není aktualita nebo tisková zpráva pro veřejnost, nastav riskLevel na high a titulkem naznač, že vyžaduje kontrolu.",
+          `Název zdroje: ${sourceName}`,
+          `URL zdroje: ${sourceUrl}`,
           `Původní titulek: ${originalTitle}`,
           `Datum zdroje: ${sourceDate}`,
           `Text zdroje:\n${sourceText.slice(0, 12000)}`
@@ -270,13 +322,14 @@ async function createDraftWithOpenAI(originalTitle: string, sourceDate: string, 
           properties: {
             title: { type: "string" },
             slug: { type: "string" },
+            category: { type: "string", enum: ["zpravy", "kultura", "sport", "akce", "servis"] },
             excerpt: { type: "string" },
             body: { type: "string" },
             answerQuestion: { type: "string" },
             answerText: { type: "string" },
             riskLevel: { type: "string", enum: ["low", "medium", "high"] }
           },
-          required: ["title", "slug", "excerpt", "body", "answerQuestion", "answerText", "riskLevel"]
+          required: ["title", "slug", "category", "excerpt", "body", "answerQuestion", "answerText", "riskLevel"]
         }
       }
     }
@@ -291,7 +344,7 @@ async function createDraftWithOpenAI(originalTitle: string, sourceDate: string, 
   };
 }
 
-function toMarkdown(draft: ArticleDraft, sourceDate: string, sourceUrl: string): string {
+function toMarkdown(draft: ArticleDraft, sourceDate: string, sourceUrl: string, sourceName: string): string {
   const frontmatter = {
     title: draft.title,
     slug: draft.slug,
@@ -299,7 +352,8 @@ function toMarkdown(draft: ArticleDraft, sourceDate: string, sourceUrl: string):
     sourceName,
     sourceDate,
     sourceUrl,
-    draft: true,
+    draft: draft.riskLevel === "high",
+    category: draft.category,
     excerpt: draft.excerpt,
     answerQuestion: draft.answerQuestion,
     answerText: draft.answerText,
@@ -315,12 +369,44 @@ function cleanText(value: string): string {
   return value.replace(/\s+/g, " ").trim();
 }
 
+function splitEnvUrls(value: string | undefined): string[] {
+  return (value ?? "")
+    .split(/[\n,]+/)
+    .map((url) => url.trim())
+    .filter(Boolean);
+}
+
+function sourceNameFromUrl(sourceUrl: string): string {
+  const host = new URL(sourceUrl).hostname.replace(/^www\./, "");
+
+  if (host.includes("znojmocity.cz")) return "Znojmocity.cz";
+  if (host.includes("znojemsky.denik.cz")) return "Znojemský deník";
+  if (host.includes("idnes.cz")) return "iDNES.cz";
+  if (host.includes("znojemsko.cz")) return "Znojemsko.cz";
+  if (host.includes("hcorli.cz")) return "HC Orli Znojmo";
+  if (host.includes("1scznojmo.cz")) return "1. SC Znojmo";
+  if (host.includes("muzeumznojmo.cz")) return "Jihomoravské muzeum ve Znojmě";
+  if (host.includes("znojemskabeseda.com")) return "Znojemská Beseda";
+  if (host.includes("kinoznojmo.cz")) return "Kino Znojmo";
+  if (host.includes("nemzn.cz")) return "Nemocnice Znojmo";
+  if (host.includes("znojmo.charita.cz")) return "Charita Znojmo";
+
+  return host;
+}
+
 function hashText(value: string): string {
   return createHash("sha256").update(cleanText(value).toLowerCase()).digest("hex");
 }
 
 function today(): string {
-  return new Date().toISOString().slice(0, 10);
+  const formatter = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Prague",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  });
+
+  return formatter.format(new Date());
 }
 
 function parseCzechDate(value: string): string | null {

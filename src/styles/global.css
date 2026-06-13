@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-green: #123d2a;
+  --color-cream: #fbfaf7;
+  --color-rust: #9b3324;
+}
+
 html {
   background: #fbfaf7;
   color: #171717;
@@ -19,4 +25,87 @@ body {
 
 a {
   text-underline-offset: 0.16em;
+}
+
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-green);
+  font-weight: 800;
+  font-size: clamp(1.45rem, 2vw, 1.9rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+
+.site-logo:hover {
+  color: var(--color-green);
+  text-decoration: none;
+}
+
+.nav-link {
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link-active {
+  border-bottom-color: var(--color-rust);
+  color: #171717;
+}
+
+.home-hero {
+  padding-top: 72px;
+  padding-bottom: 48px;
+}
+
+.home-hero-photo-section {
+  margin-top: 48px;
+  margin-bottom: 56px;
+}
+
+.home-hero-photo {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: center 45%;
+  display: block;
+  border-radius: 6px;
+  filter: saturate(0.9) contrast(0.95) brightness(0.96);
+}
+
+.article-body p {
+  margin: 0;
+}
+
+.article-body p + p {
+  margin-top: 1.65rem;
+}
+
+.article-body h2,
+.article-body h3 {
+  margin-top: 2.4rem;
+  font-family: inherit;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.article-body a {
+  color: #9b3324;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    padding-top: 48px;
+    padding-bottom: 32px;
+  }
+
+  .home-hero-photo-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .home-hero-photo {
+    height: 160px;
+    border-radius: 4px;
+  }
 }

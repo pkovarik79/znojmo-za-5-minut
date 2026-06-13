@@ -1,34 +1,66 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { categories } from "../../data/site";
+import { sourceLabel } from "../../lib/sourceLabels";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles", ({ data }) => !data.draft);
   return articles.map((article) => ({
     params: { slug: article.slug },
-    props: { article }
+    props: { article, articles }
   }));
 }
 
-const { article } = Astro.props;
+const { article, articles } = Astro.props;
 const { Content } = await article.render();
 
 const formatDate = (date: string) =>
   new Intl.DateTimeFormat("cs-CZ", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${date}T12:00:00Z`));
 
-const publicSourceName = "Znojmocity.cz";
+const categoryLabel = (categoryId: string) =>
+  categories.find((category) => category.id === categoryId)?.label ?? "Zprávy";
+
+const otherArticles = articles
+  .filter((item) => item.slug !== article.slug)
+  .sort((a, b) => b.data.date.localeCompare(a.data.date));
+
+const relatedArticles = [
+  ...otherArticles.filter((item) => item.data.category === article.data.category),
+  ...otherArticles.filter((item) => item.data.category !== article.data.category)
+].slice(0, 3);
 ---
 
-<BaseLayout title={`${article.data.title} | Znojmo za 5 minut`}>
-  <article class="mx-auto max-w-3xl px-5 py-12 md:py-16">
-    <p class="text-sm font-medium text-stone-500">Zdroj: {publicSourceName}, {formatDate(article.data.sourceDate)}</p>
-    <h1 class="mt-5 text-4xl font-black leading-[1.03] text-[#171717] md:text-6xl">{article.data.title}</h1>
-    <section class="mt-9 border-l-2 border-[#123d2a] pl-6">
-      <h2 class="text-xl font-black leading-snug text-[#123d2a]">{article.data.answerQuestion}</h2>
-      <p class="mt-3 font-serif text-xl leading-9 text-stone-700">{article.data.answerText}</p>
-    </section>
-    <div class="prose prose-stone mt-10 max-w-none font-serif prose-p:text-xl prose-p:leading-9 prose-p:text-stone-800 prose-headings:font-sans prose-headings:font-black prose-headings:text-[#171717] prose-a:text-[#9b3324]">
-      <Content />
-    </div>
-  </article>
+<BaseLayout title={`${article.data.title} | 2city`}>
+  <div class="mx-auto grid max-w-6xl gap-12 px-5 py-12 lg:grid-cols-[minmax(0,760px)_300px] lg:items-start">
+    <article>
+      <p class="mb-4 text-xs font-black uppercase tracking-[0.16em] text-[#9b3324]">{categoryLabel(article.data.category)}</p>
+      <h1 class="text-4xl font-black leading-[1.03] text-[#171717] md:text-6xl">{article.data.title}</h1>
+      <section class="mt-9 border-l-2 border-[#123d2a] pl-6">
+        <h2 class="text-xl font-black leading-snug text-[#123d2a]">{article.data.answerQuestion}</h2>
+        <p class="mt-3 font-serif text-xl leading-9 text-stone-700">{article.data.answerText}</p>
+      </section>
+      <div class="article-body mt-10 max-w-none font-serif text-xl leading-9 text-stone-800">
+        <Content />
+      </div>
+      <p class="mt-12 border-t border-stone-200 pt-5 text-sm font-medium text-stone-500">Zdroj: {sourceLabel(article.data.sourceName)}, {formatDate(article.data.sourceDate)}</p>
+    </article>
+
+    {relatedArticles.length > 0 && (
+      <aside class="border-t-4 border-[#123d2a] pt-5 lg:sticky lg:top-6">
+        <h2 class="text-xl font-black text-[#171717]">Další články</h2>
+        <div class="mt-4 divide-y divide-stone-200">
+          {relatedArticles.map((item) => (
+            <article class="py-4 first:pt-0">
+              <p class="text-xs font-black uppercase tracking-[0.14em] text-[#9b3324]">{categoryLabel(item.data.category)}</p>
+              <h3 class="mt-2 text-lg font-black leading-tight text-[#171717]">
+                <a class="hover:text-[#9b3324]" href={`/articles/${item.slug}`}>{item.data.title}</a>
+              </h3>
+              <p class="mt-2 text-sm leading-6 text-stone-500">{formatDate(item.data.date)}</p>
+            </article>
+          ))}
+        </div>
+      </aside>
+    )}
+  </div>
 </BaseLayout>

@@ -1,4 +1,4 @@
-# Znojmo za 5 minut
+# 2city
 
 MVP statického webu v Astře, který publikuje schválené Markdown články a umí přes GitHub Actions vytvářet drafty z tiskových zpráv města Znojma.
 

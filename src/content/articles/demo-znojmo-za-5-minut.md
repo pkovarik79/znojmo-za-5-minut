@@ -1,11 +1,12 @@
 ---
-title: "Znojmo za 5 minut spouští přehled tiskových zpráv"
+title: "2city spouští přehled tiskových zpráv"
 slug: "demo-znojmo-za-5-minut"
 date: "2026-06-05"
 sourceName: "Město Znojmo"
 sourceDate: "2026-06-05"
 sourceUrl: "https://example.com/internal-demo"
 draft: true
+category: "zpravy"
 excerpt: "Ukázkový článek ukazuje, jak budou krátká shrnutí tiskových zpráv na webu vypadat."
 answerQuestion: "Co je hlavní zpráva?"
 answerText: "Web převádí tiskové zprávy do stručnější podoby a publikuje jen schválené články."

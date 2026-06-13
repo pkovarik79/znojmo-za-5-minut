@@ -9,6 +9,7 @@ const articles = defineCollection({
     sourceDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     sourceUrl: z.string().url().optional(),
     draft: z.boolean(),
+    category: z.enum(["zpravy", "kultura", "sport", "akce", "servis"]).default("zpravy"),
     excerpt: z.string().optional(),
     answerQuestion: z.string(),
     answerText: z.string(),

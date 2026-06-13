@@ -1,23 +1,21 @@
 ---
-title: "Městská knihovna Znojmo nabízí léto plné aktivit pro seniory"
+title: "Co nabídne znojemská knihovna seniorům o prázdninách?"
 slug: "mestska-knihovna-znojmo-leto-aktivit-seniori"
 date: "2026-06-19"
 sourceName: "Město Znojmo"
 sourceDate: "2026-06-19"
 sourceUrl: "https://www.znojmocity.cz/prazdniny%2Dpro%2Dseniory%2Dnabidnou%2Dtvoreni%2Dvylety%2Di%2Dnove%2Dzazitky/d-109150"
-draft: true
+draft: false
 excerpt: "Městská knihovna rozšiřuje program pro seniory o letní aktivity s poplatkem 100 korun za den."
-answerQuestion: "Jaký je cíl letních aktivit Městské knihovny Znojmo pro seniory?"
-answerText: "Cílem je nabídnout seniorům možnost aktivně strávit léto, poznat nová místa a potkat se s ostatními. Program také podporuje vzdělávání a společenské kontakty."
+answerQuestion: "Kolik bude účast stát a co je v programu?"
+answerText: "Účastnický poplatek má být 100 korun za den. V programu jsou vycházky, exkurze, tvořivá dílna i další aktivity připravené knihovnou."
 riskLevel: "low"
 ---
 
-Městská knihovna v Znojmě navazuje na loňský pilotní ročník aktivit určených seniorům, který sklidil pozitivní ohlasy. Program počítá s různorodými akcemi připravenými během letních měsíců, vycházejícími z podnětů účastníků.
+Městská knihovna ve Znojmě chystá na léto program pro seniory. Navazuje na loňský pilotní ročník a část aktivit vychází z podnětů účastníků.
 
-Senioři se mohou těšit na přírodovědnou vycházku, exkurzi do společnosti FCC Znojmo i návštěvu třídicí linky v Dobšicích. Součástí programu je také tvořivá dílna a další aktivity vedené pracovníky knihovny.
+V plánu je přírodovědná vycházka, exkurze do společnosti FCC Znojmo i návštěva třídicí linky v Dobšicích. Součástí programu má být také tvořivá dílna.
 
-Rada města schválila účastnický poplatek 100 korun za den, který pokryje materiál na tvoření, drobné občerstvení a honoráře lektorům.
+Účastnický poplatek je stanovený na 100 korun za den. Má pokrýt materiál na tvoření, drobné občerstvení a odměny lektorům.
 
-Cílem projektu je nabídnout seniorům nejen vzdělávání, ale také příležitost k setkávání a společnému trávení volného času během léta. Ředitelka knihovny Jana Sikorová zdůraznila, že knihovna je pro seniory místem pro budování vztahů.
-
-Starosta města František Koudela uvedl, že aktivity pomáhají snižovat izolaci a podporují aktivní život v každém věku.
+Program míří na seniory, kteří chtějí během prázdnin vyrazit mezi lidi, něco si vyzkoušet nebo poznat místa spojená s provozem města.
