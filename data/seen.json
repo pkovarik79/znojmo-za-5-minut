@@ -142,5 +142,85 @@
     "sourceDate": "2026-06-19",
     "createdFile": "src/content/articles/mestska-knihovna-znojmo-leto-aktivit-seniori.md",
     "createdAt": "2026-06-19T10:56:37.666Z"
+  },
+  {
+    "sourceUrl": "https://www.muzeumznojmo.cz/Pam%C3%A1tn%C3%ADk-Prokopa-Divi%C5%A1e-v-P%C5%99%C3%ADm%C4%9Btic%C3%ADch",
+    "contentHash": "e99ff4e912f28ba95b0a6e229173f2ef7767201b60d68d533d49584ad54c68a7",
+    "originalTitle": "Objekty",
+    "sourceDate": "2026-07-18",
+    "createdFile": "src/content/articles/jake-informace-verejnost-najde-o-objektech-jihomoravskeho-muzea-ve-znojme.md",
+    "createdAt": "2026-06-20T11:14:16.960Z"
+  },
+  {
+    "sourceUrl": "https://www.muzeumznojmo.cz/Stranka/Muzeality",
+    "contentHash": "9cfa389b49b328d2bb268b5afacb035cb1f86d76e5fa70f8c8389065785e5491",
+    "originalTitle": "Programy / žurnály / muzeality",
+    "sourceDate": "2019-09-07",
+    "createdFile": "src/content/articles/jak-kontaktovat-jihomoravske-muzeum-ve-znojme.md",
+    "createdAt": "2026-06-20T11:14:23.109Z"
+  },
+  {
+    "sourceUrl": "https://www.muzeumznojmo.cz/Vystavy-L%C3%A9to-na-Corn%C5%A1tejn%C4%9B-2026",
+    "contentHash": "5d653e355e223cd86969f9b9a76d29e1096ef32d5079a82cc21c8bf210f03ac1",
+    "originalTitle": "Akce",
+    "sourceDate": "2026-07-03",
+    "createdFile": "src/content/articles/jake-vystavy-chysta-jihomoravske-muzeum-ve-znojme-v-lete-2026.md",
+    "createdAt": "2026-06-20T11:14:30.346Z"
+  },
+  {
+    "sourceUrl": "https://www.muzeumznojmo.cz/Vystavy-Poh%C3%A1dky-na-Al%C5%A1ovce",
+    "contentHash": "44e62e8a87e47cc68d4cac6fee769345f2d153634a483abe92a935e7b9e83628",
+    "originalTitle": "Akce",
+    "sourceDate": "2026-07-07",
+    "createdFile": "src/content/articles/jake-vystavy-chysta-jihomoravske-muzeum-ve-znojme.md",
+    "createdAt": "2026-06-20T11:14:36.488Z"
+  },
+  {
+    "sourceUrl": "https://www.muzeumznojmo.cz/Vystavy-Letn%C3%AD-hradov%C3%A1nky-2026",
+    "contentHash": "0b63f31806d6e11829a1e263a764960b4be40707081870fb57ba6b8b219b09d3",
+    "originalTitle": "Akce",
+    "sourceDate": "2026-07-01",
+    "createdFile": "src/content/articles/jaka-je-letni-nabidka-jihomoravskeho-muzea-ve-znojme-2026.md",
+    "createdAt": "2026-06-20T11:14:52.280Z"
+  },
+  {
+    "sourceUrl": "https://www.znojemsko.cz/volby-2026",
+    "contentHash": "40a704a3887f3804e245e25248098fbb04c9e17690f2c651cfbb4eb0a5f5ea9c",
+    "originalTitle": "Volby 2026",
+    "sourceDate": "2026-06-15",
+    "createdFile": "src/content/articles/co-ocekavat-od-komunalnich-a-senatnich-voleb-2026.md",
+    "createdAt": "2026-06-20T11:14:57.525Z"
+  },
+  {
+    "sourceUrl": "https://www.znojemsko.cz/semafory-nebo-kruhaky-o-reseni-krizovatky-na-rooseveltove-se-ve-znojme-vede-spor",
+    "contentHash": "61b66fe265d13f653c7076feb3ecf52969df94ee505a2c1c116264413121ddf0",
+    "originalTitle": "Semafory, nebo kruháky? O řešení křižovatky na Rooseveltově se ve Znojmě vede spor",
+    "sourceDate": "2026-06-20",
+    "createdFile": "src/content/articles/jake-reseni-bude-mit-krizovatka-na-rooseveltove.md",
+    "createdAt": "2026-06-20T11:15:04.587Z"
+  },
+  {
+    "sourceUrl": "https://www.znojemsko.cz/delnika-ve-zasypal-vykop-s-tezkym-zranenim-ho-transportoval-vrtulnik-do-brna",
+    "contentHash": "26db6eb4800b52959e6d53132d7b2f78290c1a34ec8259f2e5e8e708a4914638",
+    "originalTitle": "Dělníka zasypal výkop, s těžkým zraněním ho transportoval vrtulník do Brna",
+    "sourceDate": "2026-06-18",
+    "createdFile": "src/content/articles/co-vedlo-k-nehode-delnika-zasypaneho-vykopem-ve-znojme.md",
+    "createdAt": "2026-06-20T11:15:11.064Z"
+  },
+  {
+    "sourceUrl": "https://znojemsky.denik.cz/volny-cas/znojmo-vinobrani-2026-historicky-program-koncerty-zabava-festival/",
+    "contentHash": "fbdaa46b923add239215ea88f27f09a694bf9c73ce3311659424bbf6856c8359",
+    "originalTitle": "Vinobraní ve Znojmě: jaké přijedou hvězdy a kolik stojí lístek",
+    "sourceDate": "2026-06-20",
+    "createdFile": "src/content/articles/jaky-program-nabidne-vinobrani-ve-znojme-v-zari-2026.md",
+    "createdAt": "2026-06-20T11:15:16.978Z"
+  },
+  {
+    "sourceUrl": "https://znojemsky.denik.cz/kraj-a-okoli/zena-v-dolnim-rakousku-najela-omylem-do-restaurace-plne-deti/",
+    "contentHash": "7a5243b46eb6b1be2ff2ab3ae2de7af90aeab50f5ecba1ec98585366572c22e6",
+    "originalTitle": "Žena v Dolním Rakousku najela omylem do restaurace plné dětí",
+    "sourceDate": "2026-06-19",
+    "createdFile": "src/content/articles/co-se-stalo-pri-nehode-na-odpocivadle-vollerndorf-a-koho-zasahla.md",
+    "createdAt": "2026-06-20T11:15:21.670Z"
   }
 ]
