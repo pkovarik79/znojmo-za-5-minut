@@ -1,23 +1,26 @@
 ---
-title: "Znojmo pokračuje v podpoře školských projektů zaměřených na potřeby dětí i pedagogů"
+title: "Jaké školní projekty se chystají ve Znojmě?"
 slug: "znojmo-pokracuje-v-pode-skolskych-projektu-zamerenech-na-potreby-deti-i-pedagogu"
-date: "2026-06-16"
+date: "2026-06-20"
 sourceName: "Město Znojmo"
 sourceDate: "2026-06-16"
 sourceUrl: "https://www.znojmocity.cz/znojmo%2Dpokracuje%2Dv%2Dpodpore%2Dskolnich%2Dprojektu%2Dpomohou%2Ddetem%2Dve%2Dvyuce%2Di%2Dmimo%2Dni/d-109057"
-draft: true
-excerpt: "Město Znojmo ve školním roce 2026/2027 podpoří projekty usnadňující dostupnost vzdělávání a zlepšující podmínky pro děti i pedagogy ve školách."
-answerQuestion: "Jaké projekty město Znojmo pro školy plánuje v novém školním roce?"
-answerText: "Město Znojmo bude pokračovat ve financování projektů na podporu dětí s různými vzdělávacími potřebami, zlepšení školního prostředí a pohybových aktivit v mateřských školách. Podpoří i charitativní projekt pomáhající sociálně znevýhodněným dětem účastnit se školních aktivit. Významnou součástí je i vzdělávání pedagogů a zajištění dopravy pro žáky do vzdálenějších škol."
+draft: false
+category: "zpravy"
+excerpt: "Ve školách se mají řešit doprava dětí do Želešic, relaxační zóny, pohyb v mateřské škole i pomoc rodinám s náklady na školní akce."
+answerQuestion: "Co se má pro děti a školy změnit?"
+answerText: "Plán počítá s dopravou vybraných dětí do školy v Želešicích, úpravami školního prostředí, pohybovým programem v mateřské škole a pomocí dětem, které by se kvůli penězům nemusely dostat na výlety nebo kurzy."
 riskLevel: "low"
 ---
 
-Město Znojmo bude v nadcházejícím školním roce pokračovat v projektové podpoře škol. Jedním z nich je Podpora dostupnosti vzdělávání, která pomáhá dětem s různými speciálními vzdělávacími potřebami docházet do Základní školy Želešice, Sadová. Projekt zahrnuje i skupinovou dopravu mezi Znojmem a Želešicemi v pondělí a pátek.
+Ve znojemských školách se v příštím školním roce mají řešit hlavně praktické věci: doprava části dětí do školy mimo město, klidnější prostředí ve školách, víc pohybu ve školce a pomoc rodinám, pro které jsou školní akce drahé.
 
-Tři základní školy chtějí využít grantovou výzvu Nadace ČEZ zaměřenou na wellbeing. Finanční prostředky plánují využít na relaxační zóny, adaptační programy, podporu školního poradenského pracoviště nebo vzdělávání učitelů.
+Jedním z projektů je podpora dostupnosti vzdělávání pro děti, které dojíždějí do Základní školy Želešice, Sadová. Součástí má být skupinová doprava mezi Znojmem a Želešicemi v pondělí a pátek.
 
-Mateřská škola náměstí Republiky se zapojí do projektu Školka v pohybu, který zařazuje více pohybu do denního režimu dětí pomocí aktivit jako jóga, tanec a rozvoj motoriky. Po absolvování pedagogického vzdělávání může škola získat certifikát „pohybová školka“.
+Tři základní školy chtějí využít peníze z grantové výzvy zaměřené na školní prostředí. Ve hře jsou relaxační zóny, adaptační programy, poradenská podpora i vzdělávání učitelů.
 
-Základní škola náměstí Republiky bude součástí charitativního projektu Patron dětí, který pomáhá dětem ze sociálně znevýhodněných rodin zapojit se do školních aktivit, jako jsou výlety, lyžařský výcvik a adaptační pobyty. Pomoc je poskytována adresně konkrétním dětem podle potřeb identifikovaných školou a zákonnými zástupci.
+Mateřská škola na náměstí Republiky se má zapojit do programu Školka v pohybu. Ten přidává do běžného dne dětí víc pohybových aktivit, například tanec, jógu nebo cvičení motoriky.
 
-Místostarostka Bohumila Beranová uvedla, že podpora těchto projektů směřuje k lepším podmínkám ve školách a k tomu, aby se děti ve škole cítily dobře a mohly se zapojit do běžných aktivit spolužáků.
+Základní škola náměstí Republiky se má zapojit také do projektu Patron dětí. Ten pomáhá konkrétním dětem ze sociálně slabších rodin zaplatit věci, jako jsou výlety, lyžařské kurzy nebo adaptační pobyty.
+
+Pro rodiče je podstatné hlavně to, zda se tyto projekty opravdu dostanou do provozu školy a jestli pomohou dětem, které by jinak zůstaly mimo běžné školní aktivity.
