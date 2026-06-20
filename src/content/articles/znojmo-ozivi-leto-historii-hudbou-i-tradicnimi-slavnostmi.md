@@ -1,11 +1,12 @@
 ---
-title: "Znojmo oživí léto historií, hudbou i tradičními slavnostmi"
+title: "Kam v létě ve Znojmě? Program nabídne hradby, hudbu i okurky"
 slug: "znojmo-ozivi-leto-historii-hudbou-i-tradicnimi-slavnostmi"
 date: "2026-06-18"
 sourceName: "Město Znojmo"
 sourceDate: "2026-06-18"
 sourceUrl: "https://www.znojmocity.cz/znojmo%2Dozije%2Dkulturnim%2Dletem%2Dprogram%2Dprinese%2Ddesitky%2Dakci%2Dpro%2Dvsechny%2Dgenerace/d-109115"
-draft: true
+draft: false
+category: "akce"
 excerpt: "Znojemské kulturní léto nabídne řadu akcí od Hradebních pondělků přes cimbálové muziky až po Slavnosti okurek."
 answerQuestion: "Co nabídne kulturní léto ve Znojmě v roce 2026?"
 answerText: "Kulturní léto ve Znojmě přinese historické programy na Hradebních pondělcích, cimbálové muziky a tančírny na Hradní ulici, Slavnosti okurek, Chill out party a festival Playáda. Kromě hudebních a historických akcí jsou připraveny také prohlídky města a interaktivní výstava v Louckém klášteře."
@@ -20,4 +21,4 @@ Pro nejmenší jsou připraveny dětské prohlídky "Poklady královského měst
 
 Populární Chill out party u rotundy sv. Kateřiny nabídnou páteční večery s DJ sety a výhledem na město. V rámci Playády se představí nezávislé hudební skupiny s afterparty v klubu GOGO Music Club.
 
-Znojemský hrad oživí 9. července jezdecká a kaskadérská show se šermířskými souboji. Kromě toho budou probíhat komentované prohlídky města, hradeb i kostelů a každý týden vás potěší večerní prohlídky a ponocný v historickém centru.
+Znojemský hrad oživí 9. července jezdecká a kaskadérská show se šermířskými souboji. Vedle toho budou probíhat komentované prohlídky města, hradeb i kostelů a večerní prohlídky historického centra.
