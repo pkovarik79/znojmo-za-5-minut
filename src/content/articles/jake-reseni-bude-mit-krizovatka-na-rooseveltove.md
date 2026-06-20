@@ -5,7 +5,7 @@ date: "2026-06-20"
 sourceName: "Znojemsko.cz"
 sourceDate: "2026-06-20"
 sourceUrl: "https://www.znojemsko.cz/semafory-nebo-kruhaky-o-reseni-krizovatky-na-rooseveltove-se-ve-znojme-vede-spor"
-draft: false
+draft: true
 category: "zpravy"
 excerpt: "Ve Znojmě se řeší, zda má problémová křižovatka na Rooseveltově ulici dostat semafory nebo kruhový objezd."
 answerQuestion: "Jaké dopravní řešení chystá Znojmo pro křižovatku na Rooseveltově ulici?"

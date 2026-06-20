@@ -5,7 +5,7 @@ date: "2026-06-20"
 sourceName: "Znojemsko.cz"
 sourceDate: "2026-06-18"
 sourceUrl: "https://www.znojemsko.cz/delnika-ve-zasypal-vykop-s-tezkym-zranenim-ho-transportoval-vrtulnik-do-brna"
-draft: false
+draft: true
 category: "zpravy"
 excerpt: "Ve Znojmě zasypal dělníka výkop, který se stal vážným pracovním úrazem, muž byl letecky transportován do brněnské nemocnice."
 answerQuestion: "Jak se vyšetřuje pracovní úraz dělníka zasypaného výkopem ve Znojmě?"

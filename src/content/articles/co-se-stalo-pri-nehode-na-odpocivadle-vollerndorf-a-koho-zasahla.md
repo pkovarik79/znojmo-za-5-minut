@@ -5,7 +5,7 @@ date: "2026-06-20"
 sourceName: "Znojemský deník"
 sourceDate: "2026-06-19"
 sourceUrl: "https://znojemsky.denik.cz/kraj-a-okoli/zena-v-dolnim-rakousku-najela-omylem-do-restaurace-plne-deti/"
-draft: false
+draft: true
 category: "zpravy"
 excerpt: "Ve Völlerndorfu v Dolním Rakousku najela řidička omylem do restaurace s českou školní skupinou, přičemž došlo ke zranění jednoho dítěte i řidičky."
 answerQuestion: "Co se stalo při nehodě na odpočívadle Völlerndorf a koho zasáhla?"

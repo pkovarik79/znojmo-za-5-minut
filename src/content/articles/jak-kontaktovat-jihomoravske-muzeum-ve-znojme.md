@@ -5,7 +5,7 @@ date: "2026-06-20"
 sourceName: "Jihomoravské muzeum ve Znojmě"
 sourceDate: "2019-09-07"
 sourceUrl: "https://www.muzeumznojmo.cz/Stranka/Muzeality"
-draft: false
+draft: true
 category: "servis"
 excerpt: "Jihomoravské muzeum ve Znojmě je možné kontaktovat telefonicky, e-mailem i poštou."
 answerQuestion: "Jaké jsou kontaktní údaje na Jihomoravské muzeum ve Znojmě?"

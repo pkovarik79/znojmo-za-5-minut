@@ -5,7 +5,7 @@ date: "2026-06-20"
 sourceName: "Znojemsko.cz"
 sourceDate: "2026-06-15"
 sourceUrl: "https://www.znojemsko.cz/volby-2026"
-draft: false
+draft: true
 category: "zpravy"
 excerpt: "Na Znojemsku se letos na podzim uskuteční komunální a senátní volby, jejichž kandidáti a pravidla se teprve formují."
 answerQuestion: "Co se mění v komunálních a senátních volbách na Znojemsku v roce 2026?"

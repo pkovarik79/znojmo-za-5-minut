@@ -385,7 +385,7 @@ function toMarkdown(draft: ArticleDraft, sourceDate: string, sourceUrl: string, 
     sourceName,
     sourceDate,
     sourceUrl,
-    draft: draft.riskLevel === "high",
+    draft: draft.riskLevel === "high" || isMediaTipSource(sourceName),
     category: draft.category,
     excerpt: draft.excerpt,
     answerQuestion: draft.answerQuestion,
@@ -425,6 +425,10 @@ function sourceNameFromUrl(sourceUrl: string): string {
   if (host.includes("znojmo.charita.cz")) return "Charita Znojmo";
 
   return host;
+}
+
+function isMediaTipSource(sourceName: string): boolean {
+  return ["Znojemsko.cz", "Znojemský deník", "iDNES.cz"].includes(sourceName);
 }
 
 function hashText(value: string): string {

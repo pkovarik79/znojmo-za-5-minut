@@ -5,7 +5,7 @@ date: "2026-06-20"
 sourceName: "Znojemský deník"
 sourceDate: "2026-06-20"
 sourceUrl: "https://znojemsky.denik.cz/volny-cas/znojmo-vinobrani-2026-historicky-program-koncerty-zabava-festival/"
-draft: false
+draft: true
 category: "akce"
 excerpt: "Vinobraní ve Znojmě se bude konat od 11. do 13. září a nabídne koncerty, historický průvod i rytířské turnaje."
 answerQuestion: "Jaký program a vstupné nabídne vinobraní ve Znojmě v roce 2026?"
