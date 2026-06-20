@@ -75,7 +75,16 @@ async function main() {
 
   const seen = await readSeen();
   const sourceItems = (
-    await Promise.all(sourceUrls.map(async (sourceUrl) => extractSourceItems(await fetchText(sourceUrl), sourceUrl)))
+    await Promise.all(
+      sourceUrls.map(async (sourceUrl) => {
+        try {
+          return extractSourceItems(await fetchText(sourceUrl), sourceUrl);
+        } catch (error) {
+          console.warn(`Skipping source ${sourceUrl}: ${error instanceof Error ? error.message : String(error)}`);
+          return [];
+        }
+      })
+    )
   )
     .flat()
     .sort((a, b) => b.sourceDate.localeCompare(a.sourceDate))
@@ -93,15 +102,39 @@ async function main() {
       continue;
     }
 
-    const detailHtml = await fetchText(item.sourceUrl);
-    const detail = extractDetail(detailHtml, item);
+    let detailHtml: string;
+
+    try {
+      detailHtml = await fetchText(item.sourceUrl);
+    } catch (error) {
+      console.warn(`Skipping item ${item.sourceUrl}: ${error instanceof Error ? error.message : String(error)}`);
+      continue;
+    }
+
+    let detail: ReturnType<typeof extractDetail>;
+
+    try {
+      detail = extractDetail(detailHtml, item);
+    } catch (error) {
+      console.warn(`Skipping item ${item.sourceUrl}: ${error instanceof Error ? error.message : String(error)}`);
+      continue;
+    }
+
     const contentHash = hashText(`${detail.title}\n${detail.sourceDate}\n${detail.text}`);
 
     if (seen.some((seenItem) => seenItem.contentHash === contentHash)) {
       continue;
     }
 
-    const draft = await createDraftWithOpenAI(detail.title, detail.sourceDate, detail.text, detail.sourceName, item.sourceUrl);
+    let draft: ArticleDraft;
+
+    try {
+      draft = await createDraftWithOpenAI(detail.title, detail.sourceDate, detail.text, detail.sourceName, item.sourceUrl);
+    } catch (error) {
+      console.warn(`Skipping item ${item.sourceUrl}: ${error instanceof Error ? error.message : String(error)}`);
+      continue;
+    }
+
     const fileName = `${draft.slug}.md`;
     const createdFile = path.join("src", "content", "articles", fileName);
     const filePath = path.join(rootDir, createdFile);
