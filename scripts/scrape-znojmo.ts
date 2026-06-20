@@ -36,9 +36,6 @@ const seenPath = path.join(rootDir, "data", "seen.json");
 const articlesDir = path.join(rootDir, "src", "content", "articles");
 const maxItems = Number(process.env.ZNOJMO_MAX_ITEMS ?? "20");
 const defaultTipSourceUrls = [
-  "https://www.znojemsko.cz/",
-  "https://znojemsky.denik.cz/",
-  "https://www.idnes.cz/brno/zpravy/zpravy-ze-znojma-a-okoli.K8076",
   "https://hcorli.cz/",
   "https://www.1scznojmo.cz/",
   "https://www.muzeumznojmo.cz/",
@@ -183,6 +180,11 @@ async function fetchText(url: string): Promise<string> {
 }
 
 function extractSourceItems(html: string, baseUrl: string): SourceItem[] {
+  if (isMediaTipUrl(baseUrl)) {
+    console.warn(`Skipping media tip source ${baseUrl}: media sources are only editorial inspiration, not article sources.`);
+    return [];
+  }
+
   const $ = cheerio.load(html);
   const items = new Map<string, SourceItem>();
   const sourceHost = new URL(baseUrl).hostname.replace(/^www\./, "");
@@ -231,10 +233,6 @@ function isPressReleaseCandidate(sourceUrl: string, title: string, sourceHost: s
 
   if (/zamer|záměr|pronajmu|pronájmu|prodej|uredni|úřední|deska|vyhlaska|vyhláška|verejna-vyhlaska|veřejná-vyhláška/.test(combined)) {
     return false;
-  }
-
-  if (host.includes("denik.cz") || host.includes("idnes.cz") || host.includes("znojemsko.cz")) {
-    return /znojm|moravsk|jihomorav|dukova|nezamest|nezaměst|ekonom|prace|práce|dopr|nemoc|skol|škol|polic|hasic|hasič|soud|sport|kultur|festival|volby|energie/.test(combined);
   }
 
   return /radnic|sport|studii|studie|knih|pamat|památ|senior|skol|škol|dopr|festival|kultur|vystav|výstav|ocenen|oceněn|novink|nemoc|charit|kino|muze/.test(combined);
@@ -310,7 +308,7 @@ async function createDraftWithOpenAI(originalTitle: string, sourceDate: string, 
           "Nepřidávej hodnocení, spekulace ani obecné závěry. Neopisuj celé tiskové zprávy.",
           "Nikdy do článku nepiš redakční poznámky, metodiku výběru témat ani věty o tom, že pro regionální přehled má něco smysl. Čtenář má dostat zprávu, ne vysvětlení procesu.",
           "Nepoužívej prázdné závěrečné disclaimerové věty typu aktuální informace ověřte na webu, podrobnosti najdete u pořadatele, termíny se mohou měnit. Pokud je termín nebo místo nejisté, napiš konkrétně, co není jisté, jinak větu vynech.",
-          "Zdroje jako Znojemsko.cz, Znojemský deník nebo iDNES používej jen jako redakční tip na téma. Nepřebírej jejich zamčené ani autorské texty. Pokud téma pochází z média, hledej původní veřejný zdroj, například obec, instituci, pořadatele, policii, hasiče, nemocnici, školu, úřad práce, ČEZ, dopravce nebo sportovní klub.",
+          "Zdroje jako Znojemsko.cz, Znojemský deník nebo iDNES nejsou zdrojem článku. Nepřebírej, necituj ani neuváděj je. Pokud téma pochází z média, článek smí vzniknout jen z původního veřejného zdroje, například obec, instituci, pořadatele, policii, hasiče, nemocnici, školu, úřad práce, ČEZ, dopravce nebo sportovní klub.",
           "Silné regionální téma může být i mimo samotné město: Dukovany, ekonomika, zaměstnanost, doprava, zdravotnictví, školy, bezpečnost, větší kulturní akce nebo sport. Zařaď ho jen tehdy, když má zřejmý dopad na lidi ze Znojma a okolí.",
           "Pokud původní veřejný zdroj nelze dohledat, napiš pouze velmi stručný přehled z veřejně dostupného titulku a perexu, jasně drž nízkou míru detailu a nastav riskLevel na high.",
           "Vracej pouze validní JSON."
@@ -425,6 +423,11 @@ function sourceNameFromUrl(sourceUrl: string): string {
   if (host.includes("znojmo.charita.cz")) return "Charita Znojmo";
 
   return host;
+}
+
+function isMediaTipUrl(sourceUrl: string): boolean {
+  const host = new URL(sourceUrl).hostname.replace(/^www\./, "");
+  return host.includes("znojemsko.cz") || host.includes("znojemsky.denik.cz") || host.includes("idnes.cz");
 }
 
 function isMediaTipSource(sourceName: string): boolean {

@@ -31,7 +31,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1-mini' }}
           ZNOJMO_PRESS_SOURCE_URL: ${{ vars.ZNOJMO_PRESS_SOURCE_URL || 'https://www.znojmocity.cz/' }}
-          ZNOJMO_TIP_SOURCE_URLS: ${{ vars.ZNOJMO_TIP_SOURCE_URLS || 'https://www.znojemsko.cz/,https://znojemsky.denik.cz/,https://www.idnes.cz/brno/zpravy/zpravy-ze-znojma-a-okoli.K8076,https://hcorli.cz/,https://www.1scznojmo.cz/,https://www.muzeumznojmo.cz/,https://znojemskabeseda.com/,https://www.znojmozije.cz/,https://www.kinoznojmo.cz/,https://webext1.nemzn.cz/,https://lesyznojmo.cz/,https://www.gymzn.cz/,https://znojmo.charita.cz/' }}
+          ZNOJMO_TIP_SOURCE_URLS: ${{ vars.ZNOJMO_TIP_SOURCE_URLS || 'https://hcorli.cz/,https://www.1scznojmo.cz/,https://www.muzeumznojmo.cz/,https://znojemskabeseda.com/,https://www.znojmozije.cz/,https://www.kinoznojmo.cz/,https://webext1.nemzn.cz/,https://lesyznojmo.cz/,https://www.gymzn.cz/,https://znojmo.charita.cz/' }}
           ZNOJMO_MAX_ITEMS: ${{ vars.ZNOJMO_MAX_ITEMS || '20' }}
 
       - name: Commit generated drafts
