@@ -342,5 +342,21 @@
     "sourceDate": "2026-06-24",
     "createdFile": "src/content/articles/co-se-meni-v-podpore-oprav-kulturnich-pamatek-ve-znojme.md",
     "createdAt": "2026-06-24T09:50:18.581Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/predzasobte%2Dse%2Dknihami%2Dna%2Dleto%2Dmestska%2Dknihovna%2Dchysta%2Drevizi%2D175%2Dtisic%2Dsvazku/d-109258",
+    "contentHash": "1b1d6867ba11479248955db0b3053c0cf01d944437253bbc37253b68d4679028",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-06-26",
+    "createdFile": "src/content/articles/jak-ovlivni-letni-revize-knihovniho-fondu-provoz-knihoven-v-znojme.md",
+    "createdAt": "2026-06-26T09:50:58.892Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/primetice%2Dbudou%2Dmit%2Dvlastni%2Dkulturni%2Ddum%2Dzastupitele%2Dschvalili%2Dodkup%2Dbyvale%2Drestaurace%2Du%2Dpolehnu/d-109257",
+    "contentHash": "b87bbb6972654e66ac981c63f4a9346d082004745c024102ef125aa0ae0b0d66",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-06-26",
+    "createdFile": "src/content/articles/co-planuji-s-novym-kulturnim-domem-v-primetichach.md",
+    "createdAt": "2026-06-26T09:51:05.077Z"
   }
 ]
