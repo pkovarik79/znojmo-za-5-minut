@@ -374,5 +374,21 @@
     "sourceDate": "2026-07-10",
     "createdFile": "src/content/articles/jaky-program-nabidne-letosni-festival-znojmo-zije.md",
     "createdAt": "2026-07-03T09:34:18.840Z"
+  },
+  {
+    "sourceUrl": "https://www.muzeumznojmo.cz/O-muzeu/Muzeum-v-TV/videa",
+    "contentHash": "71d4c394bd22604fd15415962ba40a1ffda85cb8345f602d61d571a386483d4c",
+    "originalTitle": "Muzeum v TV/videa",
+    "sourceDate": "2019-08-28",
+    "createdFile": "src/content/articles/jake-informace-o-jihomoravskem-muzeu-ve-znojme-najdete-online.md",
+    "createdAt": "2026-07-18T08:06:28.356Z"
+  },
+  {
+    "sourceUrl": "https://www.muzeumznojmo.cz/Vystavy-Krajina-zav%C3%A1t%C3%A1-%C4%8Dasem",
+    "contentHash": "820b08dc2777be7245ff0463e40a69538a1b458a43165e26ec2c8cb39d28e9f7",
+    "originalTitle": "Výstavy",
+    "sourceDate": "2026-02-13",
+    "createdFile": "src/content/articles/jake-vystavy-nabidne-jihomoravske-muzeum-ve-znojme-v-zimnim-obdobi.md",
+    "createdAt": "2026-07-18T08:06:37.889Z"
   }
 ]
