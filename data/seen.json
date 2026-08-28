@@ -414,5 +414,21 @@
     "sourceDate": "2026-08-27",
     "createdFile": "src/content/articles/kdy-zacne-vystavba-chodniku-podel-komunikace-iii-39810-v-lancove.md",
     "createdAt": "2026-08-27T17:37:09.135Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/verejne%2Dprojednani%2Dparkovaciho%2Dsystemu%2Dprilakalo%2D170%2Dlidi%2Dpripominky%2Dmuze%2Dverejnost%2Dposilat%2Ddo%2Dkonce%2Dzari/d-111281",
+    "contentHash": "6e7a8ed92c82930f520ab9cc708b15074e9d641b9d4821460acc8d224756fc53",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-08-28",
+    "createdFile": "src/content/articles/co-se-zmeni-v-parkovacim-systemu-znojma-a-kdy-zacne-nova-etapa.md",
+    "createdAt": "2026-08-28T18:38:58.539Z"
+  },
+  {
+    "sourceUrl": "https://www.znojmocity.cz/nahradni%2Dprovoz%2Dpro%2Ddeti%2Dmaterske%2Dskoly%2Dmramotice%2Dz%2Dduvodu%2Dprobihajici%2Drekonstrukce/d-111275",
+    "contentHash": "010206f0bef3590d4fb16c49adb31e73c845142c12ef8370afc515e612cc121f",
+    "originalTitle": "Znojmo - Oficiální web",
+    "sourceDate": "2026-09-01",
+    "createdFile": "src/content/articles/kde-budou-deti-z-ms-mramotice-behem-rekonstrukce.md",
+    "createdAt": "2026-08-28T18:39:06.313Z"
   }
 ]
