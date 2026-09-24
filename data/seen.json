@@ -486,5 +486,13 @@
     "sourceDate": "2026-09-18",
     "createdFile": "src/content/articles/jak-mohou-majitele-pamatek-zadat-o-prispevek-na-obnovu-v-znojme.md",
     "createdAt": "2026-09-18T11:10:08.728Z"
+  },
+  {
+    "sourceUrl": "https://www.muzeumznojmo.cz/Vystavy-MEZIN%C3%81RODN%C3%8D-DEN-ARCHEOLOGIE-2026_468",
+    "contentHash": "7c60a021b708ff4271a8ad2883727897df3335e19dcaed237940afc4f3dd3aa8",
+    "originalTitle": "Akce",
+    "sourceDate": "2026-10-17",
+    "createdFile": "src/content/articles/kde-a-kdy-bude-mezinarodni-den-archeologie-2026.md",
+    "createdAt": "2026-09-24T11:41:34.461Z"
   }
 ]
